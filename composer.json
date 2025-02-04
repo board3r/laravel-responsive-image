@@ -1,0 +1,93 @@
+{
+  "name": "board3r/laravel-responsive-image",
+  "description": "Generate dynamic thumbs images and responsive image with blade for Laravel",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "responsive image",
+    "img srcset generator",
+    "image thumbnail",
+    "thumbs"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/board3r/laravel-responsive-image",
+  "support": {
+    "issues": "https://github.com/board3r/laravel-responsive-image/issues",
+    "source": "https://github.com/board3r/laravel-responsive-image"
+  },
+  "authors": [
+    {
+      "name": "Maxime DANJOU",
+      "role": "Developer",
+      "email": "maxime.danjou31@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "cardinalby/content-disposition": "^1.1",
+    "intervention/image": "^3.11",
+    "spatie/image-optimizer": "^1.8",
+    "spatie/laravel-package-tools": "^1.18",
+    "spatie/temporary-directory": "^2.3"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.20",
+    "orchestra/testbench": "^9.9",
+    "pestphp/pest": "^2.36",
+    "pestphp/pest-plugin-type-coverage": "^2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Board3r\\ResponsiveImage\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "0.x-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Board3r\\ResponsiveImage\\ResponsiveImageServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "pest": "vendor/bin/pest --parallel",
+    "pest-coverage": "vendor/bin/pest --coverage",
+    "pest-type": "vendor/bin/pest --type-coverage",
+    "pint": "vendor/bin/pint",
+    "post-autoload-dump": [
+      "@clear",
+      "@prepare"
+    ],
+    "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+    "prepare": "@php vendor/bin/testbench package:discover --ansi",
+    "build": "@php vendor/bin/testbench workbench:build --ansi",
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "@build",
+      "@php vendor/bin/testbench serve --ansi"
+    ],
+    "lint": [
+      "@php vendor/bin/pint --ansi",
+      "@php vendor/bin/phpstan analyse --verbose --ansi"
+    ],
+    "test": [
+      "@clear",
+      "@php vendor/bin/pest"
+    ]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

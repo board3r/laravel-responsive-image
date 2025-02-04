@@ -1,0 +1,26 @@
+preset: package
+
+namespace: Board3r\ResponsiveImage
+
+paths:
+    src: src
+    resource: resources
+
+factory:
+    path: database/factories
+
+migration:
+    path: database/migrations
+    prefix: ''
+
+console:
+    namespace: Board3r\ResponsiveImage\Console
+
+model:
+    namespace: Board3r\ResponsiveImage\Models
+
+provider:
+    namespace: Board3r\ResponsiveImage\Providers
+
+testing:
+    namespace: \Tests

@@ -1,0 +1,7 @@
+vendor
+node_modules
+tests/fixtures/responsive-image/*/*
+npm-debug.log
+storage
+composer.lock
+.idea
