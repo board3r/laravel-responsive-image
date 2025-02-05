@@ -33,6 +33,14 @@ return [
      */
     'img_thumb_path' => env('RESPONSIVE_IMAGE_IMG_THUMB_PATH', '/responsive-image/thumbs'),
     /**
+     * Default pool of thumbnail's parameter
+     */
+    'default_srcset' => [['w' => 100], ['w' => 200], ['w' => 400], ['w' => 800], ['w' => 1200]],
+    /**
+     * Default thumbnail extension, can be overridden by 'f' query parameter
+     */
+    'default_thumb_ext' => env('RESPONSIVE_IMAGE_DEFAULT_THUMB_EXT', 'webp'),
+    /**
      * Allowed origin image's extension to generate thumbnails
      */
     'allowed_extension' => ['webp', 'jpg', 'jpeg', 'png', 'gif'],
@@ -40,14 +48,6 @@ return [
      * Allowed thumbnails extension format
      */
     'allowed_format' => ['webp', 'jpg', 'png', 'gif'],
-    /**
-     * Default thumbnail extension, can be overridden by 'f' query parameter
-     */
-    'default_thumb_ext' => env('RESPONSIVE_IMAGE_DEFAULT_THUMB_EXT', 'webp'),
-    /**
-     * List of allowed crop position for thumbnail,use 'c' query parameter to define the thumbnail crop position
-     */
-    'allowed_crop' => ['center', 'top', 'top-right', 'top-left', 'left', 'bottom', 'bottom-right', 'bottom-left', 'right'],
     /**
      * List of allowed width for thumbnail, use 'w' query parameter to define the thumbnail width
      */
@@ -57,9 +57,9 @@ return [
      */
     'allowed_height' => [50, 100, 200, 300, 400, 500, 600, 800, 1000, 1200],
     /**
-     * Default pool of thumbnail's parameter
+     * List of allowed crop position for thumbnail,use 'c' query parameter to define the thumbnail crop position
      */
-    'default_srcset' => [['w' => 100], ['w' => 200], ['w' => 400], ['w' => 800], ['w' => 1200]],
+    'allowed_crop' => ['center', 'top', 'top-right', 'top-left', 'left', 'bottom', 'bottom-right', 'bottom-left', 'right'],
     /**
      * The thumbnails are stored in a tree of directories, set here the number of level
      */

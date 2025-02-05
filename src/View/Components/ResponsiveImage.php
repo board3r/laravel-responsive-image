@@ -39,9 +39,9 @@ class ResponsiveImage extends Component
      *                              in the last case it's important to send information of width after the url to keep responsive aspect in the srcset
      * @param  string|null  $width  Attribute 'width' information of the original image, if this information is not filled, it will be calculated depending on the file
      * @param  string|null  $height  Attribute 'height' information of the original image, if this information is not filled, it will be calculated depending on the file
-     * @param  string|false|null  $loading  Attribute 'loading' for the img HTML tag
-     * @param  string|false|null  $fetchPriority  Attribute 'fetchPriority' for the img HTML tag
-     * @param  string|false|null  $decoding  Attribute 'decoding' for the img HTML tag
+     * @param  string|null  $loading  Attribute 'loading' for the img HTML tag
+     * @param  string|null  $fetchPriority  Attribute 'fetchPriority' for the img HTML tag
+     * @param  string|null  $decoding  Attribute 'decoding' for the img HTML tag
      * @param  bool|null  $useCustomThumbs  Enable custom thumbs. See $thumbs param
      */
     public function __construct(
@@ -49,9 +49,9 @@ class ResponsiveImage extends Component
         public ?array $thumbs = [],
         public ?string $width = '',
         public ?string $height = '',
-        public string|false|null $loading = 'lazy',
-        public string|false|null $fetchPriority = false,
-        public string|false|null $decoding = false,
+        public string|null $loading = 'lazy',
+        public string|null $fetchPriority = null,
+        public string|null $decoding = null,
         protected ?bool $useCustomThumbs = false
     ) {
 
