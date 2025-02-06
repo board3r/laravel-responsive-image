@@ -7,6 +7,7 @@ use Board3r\ResponsiveImage\Support\ResponsiveImage;
 test('Original Single Route', function () {
     $response = $this->get(ResponsiveImage::originPath('mountain.jpg'));
     $response->assertStatus(200);
+    $response->assertHeader('Content-Type', 'image/jpeg');
 });
 
 test('Original Single Route Not Found', function () {
