@@ -11,7 +11,7 @@ Route::middleware('cache.headers:public;max_age='.config('responsive-image.cache
         ResponsiveImage::originPath($imgPath);
         $originalFilePath = ResponsiveImage::originPath($imgPath);
         if (ResponsiveImage::originDisk()->exists($originalFilePath)) {
-            return ResponsiveImage::originDisk()->get($originalFilePath);
+            return response()->file(ResponsiveImage::originDisk()->path($originalFilePath));
         } else {
             abort(404);
         }
