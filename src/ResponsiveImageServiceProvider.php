@@ -14,7 +14,7 @@ class ResponsiveImageServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package->name('responsive-image')
-            ->hasConfigFile()
+            ->hasConfigFile('responsive-image')
             ->hasViews('board3r')
             ->hasViewComponent('board3r', ResponsiveImage::class)
             ->hasRoute('web')

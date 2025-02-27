@@ -53,7 +53,7 @@ return [
      */
     'allowed_width' => [50, 100, 200, 400, 600, 800, 1200, 1400, 1600],
     /**
-     * List of allowed height for thumbnail, use 'w' query parameter to define the thumbnail height
+     * List of allowed height for thumbnail, use 'h' query parameter to define the thumbnail height
      */
     'allowed_height' => [50, 100, 200, 300, 400, 500, 600, 800, 1000, 1200],
     /**
